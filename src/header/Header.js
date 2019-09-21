@@ -13,9 +13,9 @@ const StyledLogo = Styled.div`
 const StyledLink = Styled.div`
     font-weight: bold;
     display: flex;
-    font-size: 16px;
+    font-size: 14px;
     .ant-anchor-link {
-        padding: 5px 0 7px 30px;
+        padding: 7px 0 7px 30px;
     }
     a.ant-anchor-link-title {
         color: #ff7974;
@@ -26,13 +26,15 @@ const StyledLink = Styled.div`
 `;
 const StyledLinkBox = Styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     height: 100%;
+    .ant-anchor-ink {
+        height: 0;
+    }
 `;
 const StyledIconLink = Styled.a`
     padding-right: 25px;
-    border-right: 2px solid #e8e8e8;
 `;
 
 const Header = () => {
