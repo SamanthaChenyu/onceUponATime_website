@@ -1,26 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col } from "antd";
 import "antd/dist/antd.css";
 import Styled from "styled-components";
 import Logo from "../images/logo.png";
-import { Anchor, Typography, Icon } from "antd";
+import { Anchor, Icon } from "antd";
+import useHover from "@react-hook/hover";
 
 const { Link } = Anchor;
 const StyledLogo = Styled.div`
-    width: 80px;
+    width: 100px;
     padding: 10px 0px;
 `;
 const StyledLink = Styled.div`
     font-weight: bold;
     display: flex;
-    font-size: 14px;
+    font-size: 18px;
     .ant-anchor-link {
-        padding: 7px 0 7px 30px;
+        padding: 9px 0 7px 30px;
     }
     a.ant-anchor-link-title {
-        color: #ff7974;
+        color: #3e2600;
         &:hover {
-            color: #ff9c98;
+            color: #964e02;
         }
     }
 `;
@@ -29,6 +30,9 @@ const StyledLinkBox = Styled.div`
     justify-content: flex-end;
     align-items: center;
     height: 100%;
+    &:hover {
+      color: red;
+    }
     .ant-anchor-ink {
         height: 0;
     }
@@ -38,6 +42,7 @@ const StyledIconLink = Styled.a`
 `;
 
 const Header = () => {
+  const [hoverRef, isHovering] = useHover(100, 100);
   return (
     <>
       <Row type="flex">
@@ -52,12 +57,27 @@ const Header = () => {
               <StyledLink>
                 <Link href="#Intro" title="功能特色" />
                 <Link href="#About" title="團隊理念" />
-                <StyledIconLink href="www.google.com">
-                  <Icon
-                    type="apple"
-                    theme="filled"
-                    style={{ fontSize: 24, paddingLeft: 30, color: "#ff7974" }}
-                  />
+                <StyledIconLink ref={hoverRef} href="#">
+                  {isHovering ? (
+                    <Icon
+                      type="apple"
+                      style={{
+                        fontSize: 30,
+                        paddingLeft: 30,
+                        color: "#3e2600"
+                      }}
+                    />
+                  ) : (
+                    <Icon
+                      type="apple"
+                      theme="filled"
+                      style={{
+                        fontSize: 30,
+                        paddingLeft: 30,
+                        color: "#964e02"
+                      }}
+                    />
+                  )}
                 </StyledIconLink>
               </StyledLink>
             </Anchor>

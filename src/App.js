@@ -3,7 +3,7 @@ import "antd/dist/antd.css";
 import "./App.css";
 import StyledContainer from "./layout/StyledContainer";
 import Header from "./header/Header";
-import Section from "./images/section1_bg.png";
+import Intro from "./intro/Intro";
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
       <StyledContainer>
         <Header />
       </StyledContainer>
-      <img src={Section} alt="logo" style={{ width: "100%" }} />
+      <Intro />
     </>
   );
 };
