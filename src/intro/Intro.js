@@ -5,11 +5,13 @@ import Styled from "styled-components";
 import Section from "./../images/section1_bg.png";
 import Ipad from "./../images/iPadPro.png";
 import StyledContainer from "../layout/StyledContainer";
+import { Frame, Scroll, useCycle } from "framer";
+import BigMonster from "./../images/big.png";
 
 const StyledBackground = Styled.div`
     position: absolute;
     z-index: -1;
-    height: calc(100vh - 87px);
+    height: 100vh;
     overflow-y: hidden;
     &::before {
         content: " ";
@@ -20,21 +22,34 @@ const StyledBackground = Styled.div`
     }
 `;
 const StyledIpadPro = Styled.div`
-    width: 900px;
-    margin: 60px auto;
+    width: 850px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 `;
-
+const StyledBigMonster = Styled.div`
+    position: absolute;
+    bottom: 450px;
+    left: 15%;
+    transform: translateX(-15%);
+`
 const Intro = () => {
   return (
     <>
       <StyledBackground>
         <img src={Section} alt="logo" style={{ width: "100%" }} />
       </StyledBackground>
-      <StyledContainer>
+
         <StyledIpadPro>
           <img src={Ipad} alt="ipad" style={{ width: "100%" }} />
         </StyledIpadPro>
-      </StyledContainer>
+<StyledBigMonster>
+            <Frame  width={400} height={400} background={"rgba(255, 255, 255, 0)"} >
+                <img src={BigMonster} alt="logo" style={{ width: "100%" }} />
+            </Frame>
+            </StyledBigMonster>
+
     </>
   );
 };

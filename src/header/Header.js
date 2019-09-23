@@ -8,20 +8,21 @@ import useHover from "@react-hook/hover";
 
 const { Link } = Anchor;
 const StyledLogo = Styled.div`
-    width: 100px;
+    width: 70px;
     padding: 10px 0px;
+    margin-left: 30px;
 `;
 const StyledLink = Styled.div`
-    font-weight: bold;
     display: flex;
     font-size: 18px;
     .ant-anchor-link {
-        padding: 9px 0 7px 30px;
+        padding: 9px 45px 7px 30px;
     }
     a.ant-anchor-link-title {
         color: #3e2600;
+        font-weight: 700;
         &:hover {
-            color: #964e02;
+          font-weight: 400;
         }
     }
 `;
@@ -35,6 +36,10 @@ const StyledLinkBox = Styled.div`
     }
     .ant-anchor-ink {
         height: 0;
+    }
+    .ant-anchor-wrapper {
+      background-color: transparent;
+      margin-right: 30px;
     }
 `;
 const StyledIconLink = Styled.a`
@@ -55,7 +60,7 @@ const Header = () => {
           <StyledLinkBox>
             <Anchor affix={false}>
               <StyledLink>
-                <Link href="#Intro" title="功能特色" />
+                <Link href="#Information" title="功能特色" />
                 <Link href="#About" title="團隊理念" />
                 <StyledIconLink ref={hoverRef} href="#">
                   {isHovering ? (
@@ -74,7 +79,7 @@ const Header = () => {
                       style={{
                         fontSize: 30,
                         paddingLeft: 30,
-                        color: "#964e02"
+                        color: "#3e2600"
                       }}
                     />
                   )}
