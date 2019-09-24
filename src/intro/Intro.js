@@ -7,6 +7,7 @@ import { Frame, useCycle } from "framer";
 import BigMonster from "./../images/big.png";
 import BigMonsterGIF from "../images/bigMonsterGIF.gif";
 import useHover from "@react-hook/hover";
+import { motion } from "framer-motion";
 
 const StyledBackground = Styled.div`
     position: absolute;
@@ -35,16 +36,25 @@ const StyledBigMonster = Styled.div`
     transform: translateX(-15%);
     cursor: pointer;
 `
+
 const Intro = () => {
     const [hoverRef, isHovering] = useHover(100, 100);
     const variants = {
-        hidden: { scale: 1, y: 400 },
-        visible: { scale: 1, y: 0},
+        hidden: {  y: -400 ,rotate: 20 },
+        visible: {  y: 0, rotate: [-20,20,-10,0]},
       }
     const transition = {
+        ease: [0.17, 1, 1, 1],
+        duration: 0.8,
+    }
+    const BigMonsterAnimate = {
+        y: [0, 150, -150, 0, 100, 0],
+        rotate: [ 0, 40, -20, 0]
+    }
+    const BigMonsterTransition = {
         type: "tween",
-        ease: [0.17, 0.67, 0.83, 0.67],
-        duration: 0.5,
+        duration: 1,
+        delay: 1
     }
   return (
     <>
@@ -52,22 +62,29 @@ const Intro = () => {
         <img src={Section} alt="logo" style={{ width: "100%" }} />
       </StyledBackground>
         <StyledIpadPro>
+        <motion.div 
+            initial="hidden"
+            animate="visible"
+            transition={transition}
+            variants={variants}>
           <img src={Ipad} alt="ipad" style={{ width: "100%" }} />
+          </motion.div>
         </StyledIpadPro>
         <StyledBigMonster ref={hoverRef}>
             {isHovering ? (
-            <Frame  width={400} height={400} background={"rgba(255, 255, 255, 0)"} >
+            <Frame  width={400} height={400} background={"rgba(255, 255, 255, 0)"} 
+            animate={BigMonsterAnimate}  
+            transition={BigMonsterTransition}>
                 <img src={BigMonsterGIF} alt="logo" style={{ width: "100%" }} />
             </Frame>):(
-            <Frame  width={400} height={400} background={"rgba(255, 255, 255, 0)"}  initial="hidden"
-            animate="visible"
-            transition={transition}
-            variants={variants}
-            >
+            <Frame  width={400} height={400} background={"rgba(255, 255, 255, 0)"}
+            animate={BigMonsterAnimate}  
+            transition={BigMonsterTransition}>
             <img src={BigMonster} alt="logo" style={{ width: "100%" }} />
-            </Frame>                
+            </Frame>         
             )}
         </StyledBigMonster>
+        
 
     </>
   );
