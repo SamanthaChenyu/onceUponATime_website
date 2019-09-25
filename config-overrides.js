@@ -10,7 +10,6 @@ module.exports = override(
     javascriptEnabled: true,
     modifyVars: {
       "@anchor-border-color": "rgba(255, 255, 255, 0)",
-      "@font-family:" "Microsoft JhengHei",
       "@primary-color": "#3e2600",
       "@link-color": "#3e2600",
       "@link-hover-color": "#964e02",

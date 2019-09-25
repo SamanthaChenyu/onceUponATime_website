@@ -19,9 +19,7 @@ const App = () => {
   return (
     <>
       <StyledFixed>
-
-          <Header />
-
+        <Header />
       </StyledFixed>
       <Intro />
     </>
