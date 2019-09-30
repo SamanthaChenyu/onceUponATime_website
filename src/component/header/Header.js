@@ -70,6 +70,7 @@ const Header = () => {
               <StyledLink>
                 <Link href="#Information" title="功能特色" />
                 <Link href="#About" title="團隊理念" />
+                <Link href="#About" title="下載軟體" />
               </StyledLink>
             </Anchor>
           </StyledLinkBox>

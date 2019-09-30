@@ -11,18 +11,25 @@ import Title from "./Title";
 import { motion } from "framer-motion";
 import MediaQuery from "react-responsive";
 
-const StyledBackground = Styled.div`
+const StyledH4 = Styled.h4`
+    color: #3d2700;
+    font-size: 20px;
+    text-align: right;
+    font-weight: 700;
     position: absolute;
-    z-index: -1;
-    height: 100vh;
-    overflow-y: hidden;
-    &::before {
-        content: " ";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.7);
-    }
+    top: 40%;
+    left: 5%;
+    transform: translateX(-5%) translateY(-40%);
+`;
+
+const StyledBackground = Styled.div`
+position: relative;
+   background-image: url(${Section});
+   height: 100vh;
+    background-repeat: no-repeat;
+    background-position: 150px 350px;
+    background-size: 100% auto;
+    overflow-x: hidden;
 `;
 const StyledIpadPro = Styled.div`
     width: 850px;
@@ -39,15 +46,21 @@ const Intro = () => {
   return (
     <>
       <StyledBackground>
-        <img src={Section} alt="logo" style={{ width: "100%" }} />
+        <StyledIpadPro>
+          <img src={Ipad} alt="ipad" style={{ width: "100%" }} />
+        </StyledIpadPro>
+        <StyledH4>
+          創作自己故事的影音App
+          <br />
+          揮灑創造力/ 想像力的環境
+          <br />
+          讓親子對話共讀的溫暖載體
+        </StyledH4>
+        <Title />
+        <SubTitle />
+        <BigMonster />
+        <SmallMonster />
       </StyledBackground>
-      <StyledIpadPro>
-        <img src={Ipad} alt="ipad" style={{ width: "100%" }} />
-      </StyledIpadPro>
-      <Title />
-      <SubTitle />
-      <BigMonster />
-      <SmallMonster />
     </>
   );
 };

@@ -17,7 +17,7 @@ const Animate = {
 const Transition = {
   type: "tween",
   duration: 0.5,
-  delay: 8
+  delay: 6.8
 };
 const SubTitle = () => {
   return (

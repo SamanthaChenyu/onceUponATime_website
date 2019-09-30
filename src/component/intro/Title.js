@@ -1,14 +1,32 @@
 import React from "react";
-import Styled from "styled-components";
+import Styled, { keyframes } from "styled-components";
 import TitleImg from "./../../images/BigLogo.png";
 import { Frame } from "framer";
 import MediaQuery from "react-responsive";
+
+const rotate = keyframes`
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  60% {
+    -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+`;
 
 const Style = Styled.div`
     position: absolute;
     left: 33%;
     top: 28%;
     transform: translateX(-33%) translateY(-28%);
+    animation: ${rotate} 2s linear infinite;
+    animation-delay: 8s;
     cursor: pointer;    
 `;
 const Animate = {
@@ -17,7 +35,7 @@ const Animate = {
 };
 const Transition = {
   type: "tween",
-  duration: 2.8,
+  duration: 1.5,
   delay: 5
 };
 const Title = () => {

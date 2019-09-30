@@ -8,11 +8,11 @@ import MediaQuery from "react-responsive";
 
 const StyledSmallMonster = Styled.div`
     position: absolute;
-    left: 65%;
-    transform: translateX(-65%);
+    left: 75%;
+    transform: translateX(-75%);
     cursor: pointer;
     @media (max-width: 1280px) {
-      bottom: 325px;
+      bottom: 460px;
     }  
 `;
 

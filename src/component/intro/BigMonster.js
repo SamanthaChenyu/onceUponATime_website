@@ -9,8 +9,8 @@ import MediaQuery from "react-responsive";
 const StyledBigMonster = Styled.div`
     position: absolute;
     bottom: 450px;
-    left: 15%;
-    transform: translateX(-15%);
+    left: 5%;
+    transform: translateX(-5%);
     cursor: pointer;
     @media (max-width: 1280px) {
       bottom: 300px;
