@@ -7,7 +7,6 @@ import { Anchor } from "antd";
 
 const { Link } = Anchor;
 const StyledLogo = Styled.div`
-    width: 70px;
     padding: 10px 0px;
     margin-left: 30px;
 `;
@@ -22,6 +21,7 @@ const StyledLink = Styled.div`
       font-weight: bold;
       text-decoration: none;
       display: block;
+      margin-top: 20px;
         &:hover {
           font-weight: 700;
           background: linear-gradient(90deg,#ff3e8e 5%,#ffa500 50%,#3fbcf6 95%);
@@ -60,9 +60,7 @@ const Header = () => {
     <>
       <Row type="flex">
         <Col md={16} xs={24}>
-          <StyledLogo>
-            <img src={Logo} alt="logo" style={{ width: "100%" }} />
-          </StyledLogo>
+          <StyledLogo />
         </Col>
         <Col md={8} xs={24}>
           <StyledLinkBox>
@@ -70,7 +68,6 @@ const Header = () => {
               <StyledLink>
                 <Link href="#Information" title="功能特色" />
                 <Link href="#About" title="團隊理念" />
-                <Link href="#About" title="下載軟體" />
               </StyledLink>
             </Anchor>
           </StyledLinkBox>

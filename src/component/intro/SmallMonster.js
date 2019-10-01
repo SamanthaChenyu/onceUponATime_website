@@ -20,7 +20,7 @@ const StyledSmallMonster = Styled.div`
 const SmallMonster = () => {
   const [Hover, isHover] = useHover(100, 100);
   const SmallMonsterAnimate = {
-    y: [250, 100, 200, 50, 0],
+    y: [250, 0, 80, 0],
     x: [200, 0],
     opacity: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
   };
