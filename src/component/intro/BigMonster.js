@@ -12,7 +12,7 @@ const StyledBigMonster = Styled.div`
     left: 5%;
     transform: translateX(-5%);
     cursor: pointer;
-    @media (max-width: 1280px) {
+    @media (max-width: 1440px) {
       bottom: 300px;
     }
 `;
@@ -31,7 +31,7 @@ const BigMonster = () => {
   };
   return (
     <>
-      <MediaQuery query="(min-device-width: 1281px)">
+      <MediaQuery query="(min-device-width: 1441px)">
         <StyledBigMonster ref={hoverRef}>
           {isHovering ? (
             <Frame
@@ -64,7 +64,7 @@ const BigMonster = () => {
           )}
         </StyledBigMonster>
       </MediaQuery>
-      <MediaQuery query="(max-device-width: 1280px)">
+      <MediaQuery query="(max-device-width: 1440px)">
         <StyledBigMonster ref={hoverRef}>
           {isHovering ? (
             <Frame

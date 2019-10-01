@@ -18,7 +18,7 @@ const StyledFixed = Styled.div`
 const App = () => {
   return (
     <>
-      <Sound />
+      {/* <Sound /> */}
       <StyledFixed>
         <Header />
       </StyledFixed>

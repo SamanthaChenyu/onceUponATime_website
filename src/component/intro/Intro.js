@@ -11,17 +11,6 @@ import Title from "./Title";
 import { motion } from "framer-motion";
 import MediaQuery from "react-responsive";
 
-const StyledH4 = Styled.h4`
-    color: #3d2700;
-    font-size: 20px;
-    text-align: right;
-    font-weight: 700;
-    position: absolute;
-    top: 40%;
-    left: 5%;
-    transform: translateX(-5%) translateY(-40%);
-`;
-
 const StyledBackground = Styled.div`
 position: relative;
    background-image: url(${Section});
@@ -37,7 +26,7 @@ const StyledIpadPro = Styled.div`
     top: 60%;
     left: 50%;
     transform: translateX(-50%) translateY(-60%);
-    @media (max-width: 1280px) {
+    @media (max-width: 1440px) {
       width: 650px;
     }
 `;
@@ -49,13 +38,6 @@ const Intro = () => {
         <StyledIpadPro>
           <img src={Ipad} alt="ipad" style={{ width: "100%" }} />
         </StyledIpadPro>
-        <StyledH4>
-          創作自己故事的影音App
-          <br />
-          揮灑創造力/ 想像力的環境
-          <br />
-          讓親子對話共讀的溫暖載體
-        </StyledH4>
         <Title />
         <SubTitle />
         <BigMonster />

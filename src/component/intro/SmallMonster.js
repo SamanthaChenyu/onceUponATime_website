@@ -11,7 +11,8 @@ const StyledSmallMonster = Styled.div`
     left: 75%;
     transform: translateX(-75%);
     cursor: pointer;
-    @media (max-width: 1280px) {
+    bottom: 460px;
+    @media (max-width: 1440px) {
       bottom: 460px;
     }  
 `;
@@ -30,37 +31,72 @@ const SmallMonster = () => {
   };
   return (
     <>
-      <StyledSmallMonster ref={Hover}>
-        {isHover ? (
-          <Frame
-            width={250}
-            height={250}
-            background={"rgba(255, 255, 255, 0)"}
-            animate={SmallMonsterAnimate}
-            transition={SmallMonsterTransition}
-          >
-            <img
-              src={SmallMonsterGIF}
-              alt="SmallMonsterGIF"
-              style={{ width: "100%" }}
-            />
-          </Frame>
-        ) : (
-          <Frame
-            width={250}
-            height={250}
-            background={"rgba(255, 255, 255, 0)"}
-            animate={SmallMonsterAnimate}
-            transition={SmallMonsterTransition}
-          >
-            <img
-              src={SmallMonsterImg}
-              alt="SmallMonster"
-              style={{ width: "100%" }}
-            />
-          </Frame>
-        )}
-      </StyledSmallMonster>
+      <MediaQuery query="(min-device-width: 1441px)">
+        <StyledSmallMonster ref={Hover}>
+          {isHover ? (
+            <Frame
+              width={300}
+              height={300}
+              background={"rgba(255, 255, 255, 0)"}
+              animate={SmallMonsterAnimate}
+              transition={SmallMonsterTransition}
+            >
+              <img
+                src={SmallMonsterGIF}
+                alt="SmallMonsterGIF"
+                style={{ width: "100%" }}
+              />
+            </Frame>
+          ) : (
+            <Frame
+              width={300}
+              height={300}
+              background={"rgba(255, 255, 255, 0)"}
+              animate={SmallMonsterAnimate}
+              transition={SmallMonsterTransition}
+            >
+              <img
+                src={SmallMonsterImg}
+                alt="SmallMonster"
+                style={{ width: "100%" }}
+              />
+            </Frame>
+          )}
+        </StyledSmallMonster>
+      </MediaQuery>
+      <MediaQuery query="(max-device-width: 1440px)">
+        <StyledSmallMonster ref={Hover}>
+          {isHover ? (
+            <Frame
+              width={250}
+              height={250}
+              background={"rgba(255, 255, 255, 0)"}
+              animate={SmallMonsterAnimate}
+              transition={SmallMonsterTransition}
+            >
+              <img
+                src={SmallMonsterGIF}
+                alt="SmallMonsterGIF"
+                style={{ width: "100%" }}
+              />
+            </Frame>
+          ) : (
+            <Frame
+              width={250}
+              height={250}
+              background={"rgba(255, 255, 255, 0)"}
+              animate={SmallMonsterAnimate}
+              transition={SmallMonsterTransition}
+            >
+              <img
+                src={SmallMonsterImg}
+                alt="SmallMonster"
+                style={{ width: "100%" }}
+              />
+            </Frame>
+          )}
+        </StyledSmallMonster>
+      </MediaQuery>
     </>
   );
 };
