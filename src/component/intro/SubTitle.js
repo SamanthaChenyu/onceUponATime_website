@@ -7,8 +7,8 @@ import MediaQuery from "react-responsive";
 const Style = Styled.div`
     position: absolute;
     left: 65%;
-    top: 15%;
-    transform: translateX(-65%) translateY(-15%);
+    top: 10%;
+    transform: translateX(-65%) translateY(-10%);
     cursor: pointer;
     @media (max-width: 1440px) {
       left: 68%;

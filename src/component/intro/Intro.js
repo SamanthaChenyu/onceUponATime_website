@@ -9,7 +9,7 @@ import SubTitle from "./SubTitle";
 import Title from "./Title";
 import { motion } from "framer-motion";
 import MediaQuery from "react-responsive";
-import Description from "../../images/subTitle.png";
+import Description from "../../images/subTitle.svg";
 import Switch from "./Switch";
 
 const StyledBackground = Styled.div`
@@ -27,12 +27,10 @@ const StyledIpadPro = Styled.div`
     top: 60%;
     left: 50%;
     transform: translateX(-50%) translateY(-60%);
-    @media (max-width: 1440px) {
-      width: 650px;
-    }
+
 `;
 const StyledDescription = Styled.div`
-    width: 250px;
+    width: 300px;
     height: auto;
     position: absolute;
     z-index: 1;

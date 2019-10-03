@@ -55,30 +55,54 @@ const Switch = () => {
   const [x, setX] = useState(70);
   const [y, setY] = useState(110);
   const [size, setSize] = useState(280);
+  const [biggerSize, setBiggerSize] = useState(350);
+  const [biggerX, setBiggerX] = useState(100);
+  const [biggerY, setBiggerY] = useState(150);
   function changeForCreate() {
     setPage(Ipad);
     setSize(280);
     setX(70);
     setY(110);
+    // min1441
+    setBiggerSize(350);
+    setBiggerX(100);
+    setBiggerY(150);
   }
   function changeForLook() {
     setPage(Look);
     setSize(150);
     setX("60%");
     setY(50);
+    // min1441
+    setBiggerSize(180);
+    setBiggerX("60%");
+    setBiggerY(80);
   }
   function changeForDraw() {
     setPage(Draw);
     setSize(280);
     setX(100);
     setY(180);
+    // min1441
+    setBiggerSize(350);
+    setBiggerX(130);
+    setBiggerY(230);
   }
   return (
     <>
       <img src={page} alt="ipad" style={{ width: "100%" }} />
-      <StyledTitle style={{ top: x, left: y }}>
-        <Title LogoSize={size} />
-      </StyledTitle>
+
+      <MediaQuery query="(min-device-width: 1441px)">
+        <StyledTitle style={{ top: biggerX, left: biggerY }}>
+          <Title LogoSize={biggerSize} />
+        </StyledTitle>
+      </MediaQuery>
+      <MediaQuery query="(max-device-width: 1440px)">
+        <StyledTitle style={{ top: x, left: y }}>
+          <Title LogoSize={size} />
+        </StyledTitle>
+      </MediaQuery>
+
       <StyledLeftSide onClick={() => alert("想要下載我們的APP了嗎？^_<")} />
       <StyledCreate onClick={changeForCreate} />
       <StyledLook onClick={changeForLook} />
