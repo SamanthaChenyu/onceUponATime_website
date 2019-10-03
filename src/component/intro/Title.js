@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Styled, { keyframes } from "styled-components";
 import TitleImg from "./../../images/BigLogo.png";
 import { Frame } from "framer";
@@ -21,18 +21,9 @@ const rotate = keyframes`
 `;
 
 const Style = Styled.div`
-    position: absolute;
-    left: 35%;
-    top: 30%;
-    transform: translateX(-35%) translateY(-30%);
     animation: ${rotate} 2s linear infinite;
     animation-delay: 8s;
     cursor: pointer;    
-    @media (max-width: 1440px) {
-      left: 33%;
-      top: 28%;
-      transform: translateX(-33%) translateY(-28%);
-    } 
 `;
 const Animate = {
   scale: [0, 1, 0.8, 1],
@@ -43,35 +34,20 @@ const Transition = {
   duration: 1.5,
   delay: 5
 };
-const Title = () => {
+const Title = ({ LogoSize }) => {
   return (
     <>
-      <MediaQuery query="(min-device-width: 1441px)">
-        <Style>
-          <Frame
-            width={350}
-            height={350}
-            background={"rgba(255, 255, 255, 0)"}
-            animate={Animate}
-            transition={Transition}
-          >
-            <img src={TitleImg} alt="Title" style={{ width: "100%" }} />
-          </Frame>
-        </Style>
-      </MediaQuery>
-      <MediaQuery query="(max-device-width: 1440px)">
-        <Style>
-          <Frame
-            width={280}
-            height={280}
-            background={"rgba(255, 255, 255, 0)"}
-            animate={Animate}
-            transition={Transition}
-          >
-            <img src={TitleImg} alt="Title" style={{ width: "100%" }} />
-          </Frame>
-        </Style>
-      </MediaQuery>
+      <Style>
+        <Frame
+          width={LogoSize}
+          height={LogoSize}
+          background={"rgba(255, 255, 255, 0)"}
+          animate={Animate}
+          transition={Transition}
+        >
+          <img src={TitleImg} alt="Title" style={{ width: "100%" }} />
+        </Frame>
+      </Style>
     </>
   );
 };

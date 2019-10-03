@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "antd/dist/antd.css";
 import Styled from "styled-components";
 import Section from "./../../images/section1_bg.png";
-import Ipad from "./../../images/iPadPro.png";
 import { Frame, useCycle } from "framer";
 import BigMonster from "./BigMonster";
 import SmallMonster from "./SmallMonster";
@@ -10,6 +9,8 @@ import SubTitle from "./SubTitle";
 import Title from "./Title";
 import { motion } from "framer-motion";
 import MediaQuery from "react-responsive";
+import Description from "../../images/subTitle.png";
+import Switch from "./Switch";
 
 const StyledBackground = Styled.div`
 position: relative;
@@ -30,15 +31,26 @@ const StyledIpadPro = Styled.div`
       width: 650px;
     }
 `;
-
+const StyledDescription = Styled.div`
+    width: 250px;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    top: 30%;
+    left: 5%;
+    transform: translateY(-30%) translateX(-5%);
+`;
 const Intro = () => {
   return (
     <>
       <StyledBackground>
+        <StyledDescription>
+          <img src={Description} alt="description" style={{ width: "100%" }} />
+        </StyledDescription>
         <StyledIpadPro>
-          <img src={Ipad} alt="ipad" style={{ width: "100%" }} />
+          <Switch />
         </StyledIpadPro>
-        <Title />
+
         <SubTitle />
         <BigMonster />
         <SmallMonster />

@@ -12,8 +12,8 @@ const StyledIpadPro = Styled.div`
     width: 850px;
     position: absolute;
     top: 60%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-60%);
+    right: 0;
+    transform: translateY(-60%);
     @media (max-width: 1280px) {
       width: 650px;
     }
