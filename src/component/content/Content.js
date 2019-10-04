@@ -13,6 +13,7 @@ const StyledContent = Styled.div`
 
 const StyledNumber = Styled.div`
     width: 300px;
+    position: absolute;
 `;
 const StyledIpadPro = Styled.div`
     width: 850px;
@@ -29,9 +30,9 @@ const Content = () => {
       <StyledContent>
         <StyledNumber>
           <Parallax
-            animation={{ x: 0, opacity: 1, playScale: [0.5, 0.8] }}
+            animation={{ y: 0, opacity: 1, playScale: [0.5, 0.8] }}
             style={{
-              transform: "translateX(100px)",
+              transform: "translateY(-100px)",
               opacity: 0
             }}
             className="code-box-shape"
