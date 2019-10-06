@@ -1,27 +1,28 @@
-import React, { useState } from "react";
-import { Row, Col } from "antd";
+import React, { useState, useEffect } from "react";
 import "antd/dist/antd.css";
 import Styled from "styled-components";
-import Logo from "./../../images/logo.png";
-import { Anchor } from "antd";
+import Sound from "./../sound/Sound";
+import { Link, Events, animateScroll as scroll, scrollSpy } from "react-scroll";
 
-const { Link } = Anchor;
-const StyledLogo = Styled.div`
-    padding: 10px 0px;
-    margin-left: 30px;
-`;
-const StyledLink = Styled.div`
+const StyledLinkBox = Styled.div`
+    height: 50px;
+    width: 95%;
+    margin: auto;
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+`;
+
+const StyledLink = Styled.div`
     font-size: 18px;
-    .ant-anchor-link {
-        padding: 9px 5px 7px 30px;
-    }
-    a.ant-anchor-link-title {
-      color: #000;
+    font-weight: 700;
+    padding-left: 30px;
+    a {
+      color: #353535;
       font-weight: bold;
       text-decoration: none;
       display: block;
-      margin-top: 20px;
+      transition: all 1s;
         &:hover {
           font-weight: 700;
           background: linear-gradient(90deg,#ff3e8e 5%,#ffa500 50%,#3fbcf6 95%);
@@ -36,43 +37,63 @@ const StyledLink = Styled.div`
           display: inline-block;
           vertical-align: middle;
         }
-    }
-`;
-const StyledLinkBox = Styled.div`
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 100%;
-    &:hover {
-      color: red;
-    }
-    .ant-anchor-ink {
-        height: 0;
-    }
-    .ant-anchor-wrapper {
-      background-color: transparent;
-      margin-right: 30px;
+        &.active{
+          transition: all 1s;
+          font-weight: 700;
+          background: linear-gradient(90deg,#ff3e8e 5%,#ffa500 50%,#3fbcf6 95%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          color: transparent; 
+          text-decoration: none;
+          display: block;
+          &::before {
+            content: "";
+            width: 0;
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
     }
 `;
 
 const Header = () => {
+  useEffect(() => {
+    Events.scrollEvent.register("begin", function(to, element) {
+      console.log("begin", arguments);
+    });
+    Events.scrollEvent.register("end", function(to, element) {
+      console.log("end", arguments);
+    });
+    scrollSpy.update();
+  });
   return (
     <>
-      <Row type="flex">
-        <Col md={16} xs={24}>
-          <StyledLogo />
-        </Col>
-        <Col md={8} xs={24}>
-          <StyledLinkBox>
-            <Anchor affix={false}>
-              <StyledLink>
-                <Link href="#Information" title="功能特色" />
-                <Link href="#About" title="團隊理念" />
-              </StyledLink>
-            </Anchor>
-          </StyledLinkBox>
-        </Col>
-      </Row>
+      <Sound />
+      <StyledLinkBox>
+        <StyledLink>
+          <Link
+            activeClass="active"
+            to="Information"
+            spy={true}
+            smooth={true}
+            duration={500}
+          >
+            功能特色
+          </Link>
+        </StyledLink>
+        <StyledLink>
+          <Link
+            activeClass="active"
+            to="About"
+            spy={true}
+            smooth={true}
+            duration={500}
+          >
+            團隊介紹
+          </Link>
+        </StyledLink>
+      </StyledLinkBox>
     </>
   );
 };

@@ -22,7 +22,7 @@ const rotate = keyframes`
 
 const Style = Styled.div`
     animation: ${rotate} 2s linear infinite;
-    animation-delay: 8s;
+    animation-delay: 6.5s;
     cursor: pointer;    
 `;
 const Animate = {
@@ -32,7 +32,7 @@ const Animate = {
 const Transition = {
   type: "tween",
   duration: 1.5,
-  delay: 5
+  delay: 4
 };
 const Title = ({ LogoSize }) => {
   return (

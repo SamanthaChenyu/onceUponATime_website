@@ -68,8 +68,8 @@ const BigMonster = () => {
         <StyledBigMonster ref={hoverRef}>
           {isHovering ? (
             <Frame
-              width={250}
-              height={250}
+              width={230}
+              height={230}
               background={"rgba(255, 255, 255, 0)"}
               animate={BigMonsterAnimate}
               transition={BigMonsterTransition}
@@ -82,8 +82,8 @@ const BigMonster = () => {
             </Frame>
           ) : (
             <Frame
-              width={250}
-              height={250}
+              width={230}
+              height={230}
               background={"rgba(255, 255, 255, 0)"}
               animate={BigMonsterAnimate}
               transition={BigMonsterTransition}

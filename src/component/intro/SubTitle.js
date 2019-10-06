@@ -9,7 +9,6 @@ const Style = Styled.div`
     left: 65%;
     top: 10%;
     transform: translateX(-65%) translateY(-10%);
-    cursor: pointer;
     @media (max-width: 1440px) {
       left: 68%;
       top: 10%;
@@ -22,7 +21,7 @@ const Animate = {
 const Transition = {
   type: "tween",
   duration: 0.5,
-  delay: 6.8
+  delay: 6
 };
 const SubTitle = () => {
   return (

@@ -10,23 +10,22 @@ const StyledSmallMonster = Styled.div`
     position: absolute;
     left: 75%;
     transform: translateX(-75%);
-    cursor: pointer;
-    bottom: 460px;
+    bottom: 440px;
     @media (max-width: 1440px) {
-      bottom: 460px;
+      bottom: 440px;
     }  
 `;
 
 const SmallMonster = () => {
   const [Hover, isHover] = useHover(100, 100);
   const SmallMonsterAnimate = {
-    y: [250, 0, 80, 0],
-    x: [200, 0],
+    y: [250, 0, 20, -10, 0],
+    x: [230, 0],
     opacity: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
   };
   const SmallMonsterTransition = {
     type: "tween",
-    duration: 2,
+    duration: 1.2,
     delay: 3
   };
   return (
