@@ -17,6 +17,7 @@ import THREE from "./images/three.png";
 import Introduce1 from "./images/Introduce1.png";
 import Introduce2 from "./images/Introduce2.png";
 import Introduce3 from "./images/Introduce3.png";
+import AboutUs from "./images/ABOUTUS.png";
 
 const StyledFixed = Styled.div`
   position: fixed;
@@ -24,6 +25,11 @@ const StyledFixed = Styled.div`
   top: 0;
   z-index: 99999;
   background-color: rgba(255, 255, 255, 0.8);
+`;
+const StyledAboutUs = Styled.div`
+    width: 300px;
+    padding-top: 100px;
+    margin: 0px auto;
 `;
 
 const App = () => {
@@ -60,6 +66,9 @@ const App = () => {
         />
       </div>
       <div id="About" className="element">
+        <StyledAboutUs>
+          <img src={AboutUs} style={{ width: "100%" }} />
+        </StyledAboutUs>
         <ResponsiveCarousel />
       </div>
       <Contact />
