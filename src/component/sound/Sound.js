@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Styled from "styled-components";
 import { Icon } from "antd";
-import Audio from "./Audio.mp3";
+import AudioBGM from "./Audio.mp3";
 
 const StyledFixedSoundIcon = Styled.div`
     position: fixed;
@@ -32,16 +32,31 @@ const StyledSoundClose = Styled.div`
     transform: translateY(15px) rotate(45deg);
     background-color: #fff;
   }
-
 `;
+
+const audio = new Audio(AudioBGM);
+
 const Sound = () => {
   const [Sound, setSound] = useState(true);
   function toggleSound() {
     Sound ? setSound(false) : setSound(true);
   }
+  function togglePlayIng() {
+    Sound ? audio.play() : audio.pause();
+    audio.addEventListener(
+      "ended",
+      function() {
+        audio.currentTime = 0;
+        audio.play();
+      },
+      false
+    );
+  }
+  useEffect(() => {
+    togglePlayIng();
+  }, [Sound]);
   return (
     <>
-      <audio src={Audio} autoPlay />
       <StyledFixedSoundIcon onClick={toggleSound}>
         {Sound ? (
           <Icon

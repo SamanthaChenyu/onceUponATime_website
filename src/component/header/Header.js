@@ -3,6 +3,7 @@ import "antd/dist/antd.css";
 import Styled from "styled-components";
 import Sound from "./../sound/Sound";
 import { Link, Events, animateScroll as scroll, scrollSpy } from "react-scroll";
+import AudioMusic from "./../sound/bloop-noise.wav";
 
 const StyledLinkBox = Styled.div`
     height: 50px;
@@ -57,6 +58,8 @@ const StyledLink = Styled.div`
     }
 `;
 
+const audio = new Audio(AudioMusic);
+
 const Header = () => {
   useEffect(() => {
     Events.scrollEvent.register("begin", function(to, element) {
@@ -77,7 +80,7 @@ const Header = () => {
             to="Information"
             spy={true}
             smooth={true}
-            duration={500}
+            duration={1000}
           >
             功能特色
           </Link>
@@ -88,7 +91,7 @@ const Header = () => {
             to="About"
             spy={true}
             smooth={true}
-            duration={500}
+            duration={1000}
           >
             團隊介紹
           </Link>

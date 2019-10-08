@@ -1,6 +1,6 @@
 import React from "react";
 import { Avatar, Carousel, Icon } from "antd";
-import Styled from "styled-components";
+import Styled, { keyframes } from "styled-components";
 import MediaQuery from "react-responsive";
 import img from "./../../images/one.png";
 import Content from "./../layout/StyledContent";
@@ -12,13 +12,30 @@ import Jason from "./../../images/Jason.jpg";
 const StyledContent = Styled(Content)`
     padding-top: 130px;
 `;
+const energy = keyframes`
+  5% {
+    transform: scale(1.2, 0.9);
+  }
+  15% {
+    transform: scale(0.9, 1.2) translate(0, -4px);
+  }
+  25% {
+    transform: scale(1);
+  }
+`;
 
 const PersonGroup = Styled.a`
   padding: 0 1.5rem;
   text-align: left;
   &:hover {
-    color: #ff8a73;
-  }
+    color: #000;
+  }  
+`;
+
+const StyledAvatar = Styled(Avatar)`
+    &:hover {
+      animation: ${energy} 1.5s infinite;
+    }
 `;
 
 const PersonTitle = Styled.p`
@@ -85,7 +102,6 @@ const ResponsiveCarousel = () => {
       <StyledContent>
         <Carousel
           {...settings}
-          autoplay
           arrows
           dots={false}
           prevArrow={<Arrow Name="arrow-left" type="left" />}
@@ -95,29 +111,29 @@ const ResponsiveCarousel = () => {
             href="https://www.facebook.com/1804968215"
             target="_blank"
           >
-            <p style={{ textAlign: "center" }}>
-              <Avatar alt="student" size={100} src={Nancy} />
+            <p style={{ textAlign: "center", paddingTop: 20 }}>
+              <StyledAvatar alt="student" size={100} src={Nancy} />
             </p>
             <PersonTitle>Nancy Huang</PersonTitle>
             <PersonDescription>Design / UIUX</PersonDescription>
           </PersonGroup>
           <PersonGroup href="https://www.facebook.com/mosown" target="_blank">
-            <p style={{ textAlign: "center" }}>
-              <Avatar alt="student" size={100} src={Vicky} />
+            <p style={{ textAlign: "center", paddingTop: 20 }}>
+              <StyledAvatar alt="student" size={100} src={Vicky} />
             </p>
             <PersonTitle>Vicky Huang</PersonTitle>
             <PersonDescription>Project Ｍanager</PersonDescription>
           </PersonGroup>
           <PersonGroup href="https://github.com/SamanthaChenyu" target="_blank">
-            <p style={{ textAlign: "center" }}>
-              <Avatar alt="student" size={100} src={Samantha} />
+            <p style={{ textAlign: "center", paddingTop: 20 }}>
+              <StyledAvatar alt="student" size={100} src={Samantha} />
             </p>
             <PersonTitle>Samantha Chen</PersonTitle>
             <PersonDescription>Software developer</PersonDescription>
           </PersonGroup>
           <PersonGroup href="https://github.com/JasonXDDD" target="_blank">
-            <p style={{ textAlign: "center" }}>
-              <Avatar alt="student" size={100} src={Jason} />
+            <p style={{ textAlign: "center", paddingTop: 20 }}>
+              <StyledAvatar alt="student" size={100} src={Jason} />
             </p>
             <PersonTitle>JasonXDDD Liu</PersonTitle>
             <PersonDescription>Software developer</PersonDescription>

@@ -21,8 +21,8 @@ const rotate = keyframes`
 `;
 
 const Style = Styled.div`
-    animation: ${rotate} 2s linear infinite;
-    animation-delay: 6.5s;
+    animation: ${rotate} 0.8s linear infinite;
+    animation-delay: 8s;
     cursor: pointer;    
 `;
 const Animate = {

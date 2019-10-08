@@ -5,8 +5,8 @@ import Ipad from "./../../images/iPadPro.png";
 import Draw from "./../../images/iPadProDraw.png";
 import Look from "./../../images/iPadProLook.png";
 import Title from "./Title";
-import { Frame, useCycle } from "framer";
 import MediaQuery from "react-responsive";
+import AudioMusic from "../sound/bloop-noise.wav";
 
 const StyledTitle = Styled.div`
     position: absolute;
@@ -50,6 +50,8 @@ const StyledDraw = Styled.div`
     cursor: pointer;
 `;
 
+const audio = new Audio(AudioMusic);
+
 const Switch = () => {
   const [page, setPage] = useState(Ipad);
   const [x, setX] = useState(70);
@@ -59,6 +61,7 @@ const Switch = () => {
   const [biggerX, setBiggerX] = useState(100);
   const [biggerY, setBiggerY] = useState(150);
   function changeForCreate() {
+    audio.play();
     setPage(Ipad);
     setSize(280);
     setX(70);
@@ -69,6 +72,7 @@ const Switch = () => {
     setBiggerY(150);
   }
   function changeForLook() {
+    audio.play();
     setPage(Look);
     setSize(150);
     setX("60%");
@@ -79,6 +83,7 @@ const Switch = () => {
     setBiggerY(80);
   }
   function changeForDraw() {
+    audio.play();
     setPage(Draw);
     setSize(280);
     setX(100);
