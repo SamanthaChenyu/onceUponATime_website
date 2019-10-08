@@ -8,13 +8,9 @@ import MediaQuery from "react-responsive";
 
 const StyledBigMonster = Styled.div`
     position: absolute;
-    bottom: 450px;
-    left: 5%;
-    transform: translateX(-5%);
+    bottom: 325px;
+    left: 1%;
     cursor: pointer;
-    @media (max-width: 1440px) {
-      bottom: 300px;
-    }
 `;
 
 const BigMonster = () => {
@@ -31,72 +27,37 @@ const BigMonster = () => {
   };
   return (
     <>
-      <MediaQuery query="(min-device-width: 1441px)">
-        <StyledBigMonster ref={hoverRef}>
-          {isHovering ? (
-            <Frame
-              width={400}
-              height={400}
-              background={"rgba(255, 255, 255, 0)"}
-              animate={BigMonsterAnimate}
-              transition={BigMonsterTransition}
-            >
-              <img
-                src={BigMonsterGIF}
-                alt="BigMonster"
-                style={{ width: "100%" }}
-              />
-            </Frame>
-          ) : (
-            <Frame
-              width={400}
-              height={400}
-              background={"rgba(255, 255, 255, 0)"}
-              animate={BigMonsterAnimate}
-              transition={BigMonsterTransition}
-            >
-              <img
-                src={BigMonsterImg}
-                alt="BigMonster"
-                style={{ width: "100%" }}
-              />
-            </Frame>
-          )}
-        </StyledBigMonster>
-      </MediaQuery>
-      <MediaQuery query="(max-device-width: 1440px)">
-        <StyledBigMonster ref={hoverRef}>
-          {isHovering ? (
-            <Frame
-              width={230}
-              height={230}
-              background={"rgba(255, 255, 255, 0)"}
-              animate={BigMonsterAnimate}
-              transition={BigMonsterTransition}
-            >
-              <img
-                src={BigMonsterGIF}
-                alt="BigMonster"
-                style={{ width: "100%" }}
-              />
-            </Frame>
-          ) : (
-            <Frame
-              width={230}
-              height={230}
-              background={"rgba(255, 255, 255, 0)"}
-              animate={BigMonsterAnimate}
-              transition={BigMonsterTransition}
-            >
-              <img
-                src={BigMonsterImg}
-                alt="BigMonster"
-                style={{ width: "100%" }}
-              />
-            </Frame>
-          )}
-        </StyledBigMonster>
-      </MediaQuery>
+      <StyledBigMonster ref={hoverRef}>
+        {isHovering ? (
+          <Frame
+            width={300}
+            height={300}
+            background={"rgba(255, 255, 255, 0)"}
+            animate={BigMonsterAnimate}
+            transition={BigMonsterTransition}
+          >
+            <img
+              src={BigMonsterGIF}
+              alt="BigMonster"
+              style={{ width: "100%" }}
+            />
+          </Frame>
+        ) : (
+          <Frame
+            width={300}
+            height={300}
+            background={"rgba(255, 255, 255, 0)"}
+            animate={BigMonsterAnimate}
+            transition={BigMonsterTransition}
+          >
+            <img
+              src={BigMonsterImg}
+              alt="BigMonster"
+              style={{ width: "100%" }}
+            />
+          </Frame>
+        )}
+      </StyledBigMonster>
     </>
   );
 };

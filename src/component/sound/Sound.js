@@ -43,14 +43,10 @@ const Sound = () => {
   }
   function togglePlayIng() {
     Sound ? audio.play() : audio.pause();
-    audio.addEventListener(
-      "ended",
-      function() {
-        audio.currentTime = 0;
-        audio.play();
-      },
-      false
-    );
+    audio.addEventListener("ended", function() {
+      audio.currentTime = 0;
+      audio.play();
+    });
   }
   useEffect(() => {
     togglePlayIng();

@@ -18,13 +18,10 @@ const StyledDescriptionBox = Styled.div`
     align-items: flex-end;
 `;
 const StyledNumber = Styled.div`
-    width: 300px;
+    width: 200px;
     position: absolute;
     right: 0;
     top: 0;
-    @media (max-width: 1440px) {
-      width: 200px;
-    }
 `;
 const StyledText = Styled.div`
     h2 {
@@ -62,7 +59,7 @@ const StyledIconLeft = Styled.div`
     right: 0px;
 `;
 const StyledIpadPro = Styled.div`
-    width: 850px;
+    width: 650px;
     @media (max-width: 1440px) {
       width: 650px;
     }
