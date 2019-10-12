@@ -27,6 +27,12 @@ const StyledCopyright = Styled.div`
         font-size: 13px;
         margin-bottom: 0px;
     }
+    @media (max-width: 1279px) {
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
 `;
 const StyledDownload = Styled.div`
     display: flex;
@@ -44,7 +50,10 @@ const Contact = () => {
       <StyledBottom>
         <StyledContent>
           <StyledCopyright>
-            <p>國立臺北教育大學　數位科技學系　玩具與遊戲設計碩士班</p>
+            <p>
+              <span>國立臺北教育大學</span>　<span>數位科技學系</span>　
+              <span>玩具與遊戲設計碩士班</span>
+            </p>
             <p>Copyright © 2019 OnceUponATime</p>
             <StyledDownload>
               <a href="#">

@@ -9,19 +9,43 @@ const StyledContent = Styled(Content)`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 1279px) {
+      flex-direction: column-reverse;
+      overflow-x:hidden;
+    }
 `;
+
+const StyledContentLeft = Styled(Content)`
+    padding-top: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 1279px) {
+      flex-direction: column;
+      overflow-x:hidden;
+    }
+`;
+
 const StyledDescriptionBox = Styled.div`
     width: 500px;
     height: 480px;
     position: relative;
     display: flex;
     align-items: flex-end;
+    @media (max-width: 1279px) {
+      width: 95%;
+      height:335px;
+      margin-top: 20px;
+    }
 `;
 const StyledNumber = Styled.div`
     width: 200px;
     position: absolute;
     right: 0;
     top: 0;
+    @media (max-width: 1279px) {
+      width: 125px;
+    }
 `;
 const StyledText = Styled.div`
     h2 {
@@ -32,13 +56,19 @@ const StyledText = Styled.div`
     }
     p {
       font-size: 16px;
-    text-align: justify;
-    padding-right: 25px;
+      text-align: justify;
+      padding-right: 25px;
+      @media (max-width: 1279px) {
+        padding-right: 0px;
+      }
     }
 `;
 const StyledTextLeft = Styled.div`
     text-align: right;
     position: relative;
+    @media (max-width: 1279px) {
+      text-align: left;
+    }
     h2 {
     font-size: 30px;
     font-weight: bold;
@@ -47,8 +77,11 @@ const StyledTextLeft = Styled.div`
     }
     p {
       font-size: 16px;
-    text-align: justify;
-    padding-left: 25px;
+      text-align: justify;
+      padding-left: 25px;
+      @media (max-width: 1279px) {
+        padding-left: 0px;
+      }
     }
 `;
 const StyledIconLeft = Styled.div`
@@ -57,11 +90,19 @@ const StyledIconLeft = Styled.div`
     position: absolute;
     top: -50px;
     right: 0px;
+    @media (max-width: 1279px) {
+      position: initial;
+      top: initial;
+      right: initial;
+    }
 `;
 const StyledIpadPro = Styled.div`
     width: 650px;
     @media (max-width: 1440px) {
       width: 650px;
+    }
+    @media (max-width: 1279px) {
+      width: 95%;
     }
 `;
 
@@ -112,7 +153,7 @@ const ParallaxContent = ({
           </Parallax>
         </StyledContent>
       ) : (
-        <StyledContent>
+        <StyledContentLeft>
           <Parallax
             animation={{ x: 0, opacity: 1, playScale: [0.5, 0.8] }}
             style={{
@@ -146,7 +187,7 @@ const ParallaxContent = ({
               <p>{description}</p>
             </StyledTextLeft>
           </StyledDescriptionBox>
-        </StyledContent>
+        </StyledContentLeft>
       )}
     </>
   );

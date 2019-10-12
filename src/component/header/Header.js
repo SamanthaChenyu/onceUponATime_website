@@ -71,18 +71,8 @@ const audio = new Audio(AudioMusic);
 
 const Header = () => {
   const [MenuShow, isMenuShow] = useState(false);
-  const [y, setY] = useState("translateY(-100%)");
-  const [IconWidth, isIconWidth] = useState("15px");
-  const [IconTop, isIconTop] = useState("20px");
-  const [IconRotateX, isIconRotateX] = useState("rotate(0deg)");
-  const [IconRotateY, isIconRotateY] = useState("rotate(0deg)");
   function toggle() {
     MenuShow ? isMenuShow(false) : isMenuShow(true);
-    MenuShow ? setY("translateY(-100%)") : setY("translateY(0%)");
-    MenuShow ? isIconWidth("15px") : isIconWidth("30px");
-    MenuShow ? isIconTop("20px") : isIconTop("10px");
-    MenuShow ? isIconRotateX("rotate(0deg)") : isIconRotateX("rotate(45deg)");
-    MenuShow ? isIconRotateY("rotate(0deg)") : isIconRotateY("rotate(-45deg)");
   }
   const StyledLinkBox = Styled.div`
     height: 50px;
@@ -98,8 +88,8 @@ const Header = () => {
       position: fixed;
       flex-direction: column;
       justify-content: center;
-      background-color: rgba(27, 234, 255, 0.5);
-      transform: ${y};
+      background-color: rgba(27, 234, 255, 0.87);
+      transform: ${MenuShow ? `translateY(0%)` : `translateY(-100%)`};
     }
   `;
   const StyledToggle = Styled.div`
@@ -120,19 +110,19 @@ const Header = () => {
           width: 30px;
           height: 3px;
           left: 0;
-          top: 10px;
-          transform: ${IconRotateX};
+          top: ${MenuShow ? `20px` : `10px`};
+          transform: ${MenuShow ? "rotate(45deg)" : "rotate(0deg)"};
         }
         &::after {
           content: "";
           transition: all 1s;
           position: absolute;
           background-color: #000;
-          width: ${IconWidth};
+          width: ${MenuShow ? `30px` : `15px`};
           height: 3px;
           right: 0;
-          top: ${IconTop};
-          transform: ${IconRotateY};
+          top: 20px;
+          transform: ${MenuShow ? "rotate(-45deg)" : "rotate(0deg)"};
         }
     }
   `;

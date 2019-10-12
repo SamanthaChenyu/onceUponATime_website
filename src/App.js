@@ -36,7 +36,7 @@ const App = () => {
       <Mobile>
         <MBIntro />
       </Mobile>
-      {/* <div id="Information" className="element">
+      <div id="Information" className="element">
         <ParallaxContent
           animate
           ipadImage={Introduce1}
@@ -65,7 +65,7 @@ const App = () => {
       <div id="About" className="element">
         <ResponsiveCarousel />
       </div>
-      <Contact /> */}
+      <Contact />
     </>
   );
 };

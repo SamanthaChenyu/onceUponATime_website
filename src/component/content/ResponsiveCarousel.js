@@ -72,12 +72,14 @@ const StyledIconArrow = Styled.div`
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+      z-index: 99999;
     }
     .arrow-right {
       right: 0;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+      z-index: 99999;
     }
 `;
 
