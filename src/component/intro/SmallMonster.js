@@ -10,6 +10,9 @@ const StyledSmallMonster = Styled.div`
     position: absolute;
     right: 60px;
     bottom: 100px;
+    @media (max-width: 1279px) {
+      display: none;
+   } 
 `;
 
 const StyleAppleStore = Styled.div`

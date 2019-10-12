@@ -4,8 +4,8 @@ const StyledContent = Styled.div`
     position: relative;
     width: 1028px;
     margin: 0px auto;
-    @media (max-width: 1028px) {
-        width: 100%;
+    @media (max-width: 1279px) {
+        width: 90%;
     }
 `;
 

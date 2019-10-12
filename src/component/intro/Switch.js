@@ -7,6 +7,7 @@ import Look from "./../../images/iPadProLook.png";
 import Title from "./Title";
 import MediaQuery from "react-responsive";
 import AudioMusic from "../sound/bloop-noise.wav";
+import MBIPad from "./../../images/MBbg.png";
 
 const StyledTitle = Styled.div`
     position: absolute;

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Styled from "styled-components";
 import "antd/dist/antd.css";
 import "./App.css";
-import Sound from "./component/sound/Sound";
+import { useMediaQuery } from "react-responsive";
 import Header from "./component/header/Header";
 import Intro from "./component/intro/Intro";
+import MBIntro from "./component/intro/MBIntro";
 import ParallaxContent from "./component/content/ParallaxContent";
 import ResponsiveCarousel from "./component/content/ResponsiveCarousel";
 import Contact from "./component/content/Contact";
@@ -17,29 +17,26 @@ import THREE from "./images/three.png";
 import Introduce1 from "./images/Introduce1.png";
 import Introduce2 from "./images/Introduce2.png";
 import Introduce3 from "./images/Introduce3.png";
-import AboutUs from "./images/ABOUTUS.png";
-
-const StyledFixed = Styled.div`
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 99999;
-  background-color: rgba(255, 255, 255, 0.8);
-`;
-const StyledAboutUs = Styled.div`
-    width: 300px;
-    padding-top: 100px;
-    margin: 0px auto;
-`;
 
 const App = () => {
+  const Desktop = ({ children }) => {
+    const isDesktop = useMediaQuery({ minWidth: 1280 });
+    return isDesktop ? children : null;
+  };
+  const Mobile = ({ children }) => {
+    const isMobile = useMediaQuery({ maxWidth: 1279 });
+    return isMobile ? children : null;
+  };
   return (
     <>
-      <StyledFixed>
-        <Header />
-      </StyledFixed>
-      <Intro />
-      <div id="Information" className="element">
+      <Header />
+      <Desktop>
+        <Intro />
+      </Desktop>
+      <Mobile>
+        <MBIntro />
+      </Mobile>
+      {/* <div id="Information" className="element">
         <ParallaxContent
           animate
           ipadImage={Introduce1}
@@ -66,12 +63,9 @@ const App = () => {
         />
       </div>
       <div id="About" className="element">
-        <StyledAboutUs>
-          <img src={AboutUs} style={{ width: "100%" }} />
-        </StyledAboutUs>
         <ResponsiveCarousel />
       </div>
-      <Contact />
+      <Contact /> */}
     </>
   );
 };

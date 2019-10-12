@@ -26,6 +26,9 @@ const StyledBackground = Styled.div`
    @media (max-width: 1440px) {
     height: 800px;
    } 
+   @media (max-width: 1279px) {
+    height: 100vh;
+   } 
 `;
 const StyledIpadPro = Styled.div`
     width: 650px;

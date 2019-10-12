@@ -8,7 +8,7 @@ const StyledFixedSoundIcon = Styled.div`
     top: 20px;
     left: 20px;
     cursor: pointer;
-    z-index: 10000;
+    z-index: 99999;
     &::before {
       content: ' ';
       position: absolute;
@@ -37,7 +37,7 @@ const StyledSoundClose = Styled.div`
 const audio = new Audio(AudioBGM);
 
 const Sound = () => {
-  const [Sound, setSound] = useState(true);
+  const [Sound, setSound] = useState(false);
   function toggleSound() {
     Sound ? setSound(false) : setSound(true);
   }

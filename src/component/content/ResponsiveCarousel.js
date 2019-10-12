@@ -8,6 +8,13 @@ import Nancy from "./../../images/Nancy.jpg";
 import Vicky from "./../../images/Vicky.jpg";
 import Samantha from "./../../images/Samantha.jpg";
 import Jason from "./../../images/Jason.jpg";
+import AboutUs from "./../../images/ABOUTUS.png";
+
+const StyledAboutUs = Styled.div`
+    width: 300px;
+    padding-top: 100px;
+    margin: 0px auto;
+`;
 
 const StyledContent = Styled(Content)`
     padding-top: 130px;
@@ -99,6 +106,9 @@ const Arrow = props => (
 const ResponsiveCarousel = () => {
   return (
     <>
+      <StyledAboutUs>
+        <img src={AboutUs} style={{ width: "100%" }} />
+      </StyledAboutUs>
       <StyledContent>
         <Carousel
           {...settings}

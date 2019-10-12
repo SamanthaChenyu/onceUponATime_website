@@ -11,6 +11,9 @@ const StyledBigMonster = Styled.div`
     bottom: 325px;
     left: 1%;
     cursor: pointer;
+    @media (max-width: 1279px) {
+      display: none;
+   } 
 `;
 
 const BigMonster = () => {
