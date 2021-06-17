@@ -4,14 +4,17 @@
   "description": "",
   "main": "index.js",
   "author": "Nicolas Burgess",
-  "homepage" : "https://onceupontime.herokuapp.com/",
+  "homepage": "https://samanthachenyu.github.io/onceUponATime_website/",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "node index.js",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    "build": "node index.js"
   },
   "keywords": [],
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "gh-pages": "^3.2.1"
   }
 }
