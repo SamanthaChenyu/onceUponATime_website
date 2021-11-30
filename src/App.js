@@ -28,7 +28,7 @@ const App = () => {
     return isMobile ? children : null;
   };
   return (
-    <>
+    <div>
       <Header />
       <Desktop>
         <Intro />
@@ -66,7 +66,7 @@ const App = () => {
         <ResponsiveCarousel />
       </div>
       <Contact />
-    </>
+    </div>
   );
 };
 
